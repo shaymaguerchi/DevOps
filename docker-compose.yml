@@ -16,9 +16,9 @@ app-timesheet:
   - mysqldb
 image : chaimaguerchi/timesheet-devops:1.0.0
 restart : on-failure
- ports : 
+ports : 
  - 8082:8082
- environement:
+environement:
   SPRING_APPLICATION_JSON: '{
     "spring.datasource.url" : "jdbc:mysql//mysqldb:3306/timesheet_db?createDatabaseIfNotExist=true",
     "spring.datasource.username" :"root",
@@ -26,8 +26,8 @@ restart : on-failure
     "spring.jpa.proprties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
     "spring.jpa.hibernate.ddl-auto" : "update"
   }'
-  stdin_open: true
-  tty:true
+stdin_open: true
+tty:true
 
-  volumes:
+volumes:
   db:
